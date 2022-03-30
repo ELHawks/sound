@@ -115,22 +115,29 @@ function play() {
     
     }
     function playStation(){
-        console.log ("platStation () started");
-        mySound=new sound("us-lab-background");
+        console.log ("playStation() started");
+        mySound=new sound("us-lab-background.mp3");
         mySound.play();
         
         }
+        function playTheBells(){
+            console.log("playTheBells() started");
+            ACDCsound= new sound("AcDc - Hells Bells.mp3")
+            ACDCsound.play();
+        }
 
-    }
     function sound(srcFile){
         this.sound = document.createElement("audio");
-        this.sound. src = scrFile;
+        this.sound.src = srcFile;
         this.sound.setAttribute("preload", "audio");
         this.sound.setAttribute("controls", "none");
         this.sound.style.display ="none";
         document.body.appendChild(this.sound);
         this.play=function(){
-
+            this.sound.play();
+        }
+        this.stop = function(){
+            this.sound.pause();
         }
     }
     
